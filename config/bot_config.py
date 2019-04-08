@@ -23,4 +23,11 @@ error_dict = {
                                     "{exc.missing_perms}\nPlease give me those permissions or the Administrator permission",
     commands.CommandInvokeError: "An unexpected error occurred, please report it to `CHATALOT1#0707`"
 }
-err_channel_ID = 559407630653587477 # MUST BE CHANGED TO THE ID OF A CHANNEL THAT YOUR INSTANCE HAS ACCESS TO
+
+welcome_message = "{member.mention} just joined. welcome!"
+goodbye_message = "{member.mention} ({member}) just left. goodbye!"
+
+# MUST BE CHANGED TO THE IDS OF CHANNELS THAT YOUR INSTANCE HAS ACCESS TO:
+err_channel_ID = 564885281782890497
+welcome_channel_ID = 564885319527432202
+
