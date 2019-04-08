@@ -11,7 +11,7 @@ error_dict = {
     commands.MissingRequiredArgument: "`{exc.param.name}` is a required argument that is missing.",
     commands.BadArgument: "One of the arguments you entered is invalid, try {ctx.prefix}help {ctx.command} for "
                           "information on how to use this command",
-    commands.BadUnionArgument: "One of the arguments you entered is invalid, try {ctx..prefix}help {ctx.command} for "
+    commands.BadUnionArgument: "One of the arguments you entered is invalid, try {ctx.prefix}help {ctx.command} for "
                                "information on how to use this command",
     commands.NoPrivateMessage: "This command cannot be run in DMs, please try again in a server channel",
     commands.TooManyArguments: "Too many arguments were passed into this command",
