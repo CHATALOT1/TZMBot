@@ -3,7 +3,7 @@ import asyncio
 import traceback
 import sys
 
-class GlobalListeners(commands.Cog):
+class ErrorHandling(commands.Cog):
 
     def __init__(self, client):
         self.client = client
