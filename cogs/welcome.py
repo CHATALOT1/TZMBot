@@ -1,5 +1,6 @@
 from discord.ext import commands
 
+
 class Welcoming(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -9,7 +10,9 @@ class Welcoming(commands.Cog):
 
     async def async_setup(self):
         await self.client.wait_until_ready()
-        self.welcome_channel = self.client.get_channel(self.client.config.welcome_channel_ID)
+        self.welcome_channel = self.client.get_channel(
+            self.client.config.welcome_channel_ID
+        )
 
     async def welcome_goodbye(self, member, message):
         if member.guild.id == self.welcome_channel.guild.id:
@@ -22,6 +25,7 @@ class Welcoming(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         await self.welcome_goodbye(member, self.client.config.goodbye_message)
+
 
 def setup(client):
     client.add_cog(Welcoming(client))
