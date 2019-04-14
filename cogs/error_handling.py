@@ -8,6 +8,12 @@ class ErrorHandling(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+        self.error_channel = None
+        self.client.loop.create_task(self.async_setup())
+
+    async def async_setup(self):
+        self.error_channel = self.client.get_channel(self.client.config.err_channel_ID)
+
     async def err_reporting(self, ctx, err):
         report_confirmation = await ctx.send(
             "An unexpected error occurred, would you like to report it? "
@@ -36,7 +42,7 @@ class ErrorHandling(commands.Cog):
             report = "".join(
                 traceback.format_exception(type(err), err, err.__traceback__)
             )
-            await self.client.get_channel(self.client.config.err_channel_ID).send(
+            await self.error_channel.send(
                 f"Exception raised in command {ctx.command} in cog {ctx.command.cog_name} "
                 f"by user {ctx.author}: ```py\n{report}\n```"
             )
