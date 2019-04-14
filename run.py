@@ -41,9 +41,9 @@ if __name__ == "__main__":
         if filename.endswith(".py"):
             try:
                 client.load_extension(f"{'cogs'}.{filename[:-3]}")
-                print(f"-\tCog extension {filename} loaded successfully")
+                logger.debug(f"-\tCog extension {filename} loaded successfully")
             except Exception as e:
-                print(f"-\tCog extension {filename} could not be loaded: {e}")
+                logger.debug(f"-\tCog extension {filename} could not be loaded: {e}")
 
     launch_time = datetime.now()
     logger.info(f"Attempting to run bot at {launch_time}")
