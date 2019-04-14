@@ -1,4 +1,3 @@
-import os
 from discord.ext import commands
 
 dev_IDs = [353574266236567556, 328976083145981962, 333945749803106306]
